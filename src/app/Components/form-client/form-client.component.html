@@ -1,0 +1,60 @@
+<div mat-dialog-title>
+  <h1>New Client</h1>
+</div>
+<div mat-dialog-content class="content">
+  <form class="example-form" [formGroup]="formClient" #formDir="ngForm">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          id="name"
+          matInput
+          type="text"
+          placeholder="Ex. Fulando da Silva"
+          formControlName="name"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input
+          id="email"
+          matInput
+          type="text"
+          placeholder="Ex. email@mail.com"
+          formControlName="email"
+          style="color:blue;font-weight: bold;"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>CPF</mat-label>
+        <input
+          id="cpf"
+          matInput
+          type="text"
+          maxlength="14"
+          placeholder="999.999.999-99"
+          [(ngModel)]="cpf"
+          (ngModelChange)="formatarCpf()"
+          formControlName="cpf"
+        />
+      </mat-form-field>
+    </div>
+    <mat-checkbox formControlName="active">Ativo</mat-checkbox>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="primary"
+    cdkFocusInitial
+    type="submit"
+    (click)="onSubmit()"
+  >
+    Salvar
+  </button>
+  <button mat-raised-button (click)="onCancel()">Cancelar</button>
+</div>

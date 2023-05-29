@@ -1,0 +1,45 @@
+<div mat-dialog-title>
+  <h1>New Provider</h1>
+</div>
+<div mat-dialog-content class="content">
+  <form class="example-form" [formGroup]="formProvider" #formDir="ngForm">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          id="name"
+          matInput
+          type="text"
+          placeholder="ex. Fornecedor XPTO"
+          formControlName="name"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Url Base</mat-label>
+        <input
+          id="urlBase"
+          matInput
+          type="text"
+          placeholder="ex: http://xpto.com.br"
+          formControlName="urlBase"
+          style="color:blue;font-weight: bold;"
+        />
+      </mat-form-field>
+    </div>
+    <mat-checkbox formControlName="active">Ativo</mat-checkbox>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="primary"
+    cdkFocusInitial
+    type="submit"
+    (click)="onSubmit()"
+  >
+    Salvar
+  </button>
+  <button mat-raised-button (click)="onCancel()">Cancelar</button>
+</div>

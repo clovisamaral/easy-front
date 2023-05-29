@@ -1,0 +1,38 @@
+.inputWidth {
+  width: 150px;
+  font-size: 7px;
+}
+mat-form-field {
+  font-size: 0.8rem;
+  padding: 10px;
+  width: 300px;
+  height: 50px;
+}
+.content {
+  padding-top: 10px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+}
+mat-slide-toggle {
+  margin-left: 10px;
+}
+.billingTypeLabel {
+  font-size: 11px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+#email{
+  color:blue;
+}
+#name{
+  font-weight: bold;
+}
+#cpf{
+  font-weight: bold;
+}
+#billing{
+  font-size: 13px;
+  font-weight: bold;
+}
