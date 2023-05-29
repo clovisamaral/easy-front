@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+@import url('assets/css/toastr.css');
+@import url('assets/css/spinner.css');
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.validation-error p {
+  color: #dc3545;
+  margin-top: 0.4em;
+  border-left: 3px solid #dc3545;
+  padding-left: 0.2em;
+}
+
+.example-form{
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-form mat-slide-toggle {
+  margin: 8px 0;
+  display: block;
+}

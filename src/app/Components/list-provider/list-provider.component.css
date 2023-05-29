@@ -1,0 +1,23 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.row{
+  display: flex;
+  gap: 10px;
+}
+
+.main-body{
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+.buttonAdd{
+  padding-bottom: 25px;
+  float: right;
+}
+
