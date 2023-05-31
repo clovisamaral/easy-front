@@ -1,0 +1,99 @@
+<div mat-dialog-title>
+  <h1>New Relationship</h1>
+</div>
+<div mat-dialog-content class="content">
+  <form class="example-form" [formGroup]="formRelationship" #formDir="ngForm">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          id="name"
+          matInput
+          type="text"
+          placeholder="ex. Conta de Agua"
+          formControlName="name"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Select a client</mat-label>
+        <mat-select
+          formControlName="clientName"
+          (selectionChange)="onClientSelectionChange($event.value)"
+        >
+          <mat-option
+            *ngFor="let client of clients"
+            [value]="client.name"
+            >{{ client.name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Select a provider</mat-label>
+        <mat-select
+          formControlName="providerName"
+          (selectionChange)="onProviderSelectionChange($event.value)"
+        >
+          <mat-option
+            *ngFor="let provider of providers"
+            [value]="provider.name"
+            >{{ provider.name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Identifier Code</mat-label>
+        <input
+          id="identifierCode"
+          matInput
+          type="text"
+          placeholder="ex: 9999999"
+          formControlName="identifierCode"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Billing</mat-label>
+        <input
+          id="billing"
+          matInput
+          type="text"
+          placeholder="ex: Per Use"
+          formControlName="billingType"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Contract Value</mat-label>
+        <input
+          id="contractValue"
+          matInput
+          type="text"
+          placeholder="ex: 9.999,99"
+          formControlName="contractValue"
+        />
+      </mat-form-field>
+    </div>
+    <mat-checkbox formControlName="extract">Extract Data</mat-checkbox>
+    <mat-checkbox formControlName="active">Ativo</mat-checkbox>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="primary"
+    cdkFocusInitial
+    type="submit"
+    (click)="onSubmit()"
+  >
+    Salvar
+  </button>
+  <button mat-raised-button (click)="onCancel()">Cancelar</button>
+</div>
