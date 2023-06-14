@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 const httpOptions = {
   headers: new HttpHeaders({
     ContenType: 'application/json',
-
   }),
 };
 
@@ -15,11 +14,13 @@ const httpOptions = {
 })
 export class ProviderService {
   url = 'https://localhost:7108/api/Provider';
+  //url = 'https://easy-invoices.azurewebsites.net/api/Provider';
 
   constructor(private http: HttpClient) {}
 
-  GetAll(): Observable<Provider[]> {
-    return this.http.get<Provider[]>(this.url);
+  GetAll(all:boolean=true): Observable<Provider[]> {
+    const apiUrl = `${this.url}?all=${all}`;
+    return this.http.get<Provider[]>(apiUrl);
   }
 
   GetById(id: number): Observable<Provider> {
@@ -46,4 +47,3 @@ export class ProviderService {
     return this.http.delete<number>(apiUrl, httpOptions);
   }
 }
-

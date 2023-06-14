@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/19a7aa97-5e16-4968-abb4-dff3709650cc/resourceGroups/POC_APP/providers/Microsoft.Web/sites/easy-invoices-front",
+    "appService.deploySubpath": "dist\\easy-front"
+}

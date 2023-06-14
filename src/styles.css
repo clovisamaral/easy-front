@@ -6,7 +6,7 @@ body {
 }
 @import url('assets/css/toastr.css');
 @import url('assets/css/spinner.css');
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 
 body {

@@ -75,14 +75,14 @@ export class ListClientComponent {
   }
 
   bindClients() {
-    this.serviceClient.GetAll().subscribe({
+    this.serviceClient.GetAll(true).subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       },
       error: (err) => {
-        this.toastr.error('Error loading data client', 'Client Form');
+        this.toastr.error('Error xxxxxxxloading data client', 'Client Form');
       },
     });
   }
