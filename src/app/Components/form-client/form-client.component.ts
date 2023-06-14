@@ -46,7 +46,6 @@ export class FormClientComponent implements OnInit {
       active: new FormControl(false),
     });
     this.formClient.patchValue(this.data);
-
     this.cpf = this.formClient.value.cpf;
   }
 

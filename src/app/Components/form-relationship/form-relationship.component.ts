@@ -129,7 +129,7 @@ export class FormRelationshipComponent {
   }
 
   LoadClients() {
-    this.clientService.GetAll().subscribe({
+    this.clientService.GetAll(false).subscribe({
       next: (res: any[]) => {
         this.clients = res;
         this.selectedClient = {
@@ -144,7 +144,7 @@ export class FormRelationshipComponent {
   }
 
   LoadProviders() {
-    this.providerService.GetAll().subscribe({
+    this.providerService.GetAll(false).subscribe({
       next: (res: any[]) => {
         this.providers = res;
         this.selectedProvider = {

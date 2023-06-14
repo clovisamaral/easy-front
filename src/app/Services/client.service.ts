@@ -6,7 +6,6 @@ import { Client } from '../Models/client';
 const httpOptions = {
   headers: new HttpHeaders({
     ContenType: 'application/json',
-
   }),
 };
 
@@ -15,11 +14,13 @@ const httpOptions = {
 })
 export class ClientService {
   url = 'https://localhost:7108/api/Client';
+  //url = 'https://easy-invoices.azurewebsites.net/api/Client';
 
   constructor(private http: HttpClient) {}
 
-  GetAll(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.url);
+  GetAll(all:boolean): Observable<Client[]> {
+    const apiUrl = `${this.url}?all=${all}`;
+    return this.http.get<Client[]>(apiUrl);
   }
 
   GetById(id: number): Observable<Client> {
