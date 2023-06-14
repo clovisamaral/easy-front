@@ -78,7 +78,7 @@ export class ListProviderComponent {
   }
 
   bindProviders() {
-    this.serviceProvider.GetAll().subscribe({
+    this.serviceProvider.GetAll(true).subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;

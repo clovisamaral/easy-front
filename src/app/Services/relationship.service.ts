@@ -15,7 +15,8 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class RelationshipService {
-  url = 'https://localhost:7108/api/Relationship';
+  //url = 'https://localhost:7108/api/Relationship';
+  url = 'https://easy-invoices.azurewebsites.net/api/Relationship';
 
   constructor(private http: HttpClient) {}
 
